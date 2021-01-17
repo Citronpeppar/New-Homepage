@@ -1,3 +1,5 @@
+
+// Colors 
 $primary: #0f0e17;
 $headline: #fffffe;
 $paragraph: #a7a9be;
@@ -5,12 +7,16 @@ $button: #ff8906;
 $highlight: #21b88e;
 $secondary: #f25f4c;
 
+//Fonts 
 $paragraph_font: Josefin Sans;
 $headline_font: Abril Fatface;
+
+//Font Sizes
+$h1: 3rem;
  
 body {
   background: #fffffe;
-  width: 100%;
+  width: 100vw;
   font-family: $paragraph_font;
   
 }
@@ -21,10 +27,12 @@ a {
 
 h1 {
   font-family: Abril Fatface;
+  font-size: $h1;
 }
 
 header {
   width: 100vw;
+  background-color: $primary;
 }
 
 nav {
@@ -50,33 +58,73 @@ ul {
   }
 }
 
+.hero-section {
+  display: flex;
+  
+}
+
+.img-holder {
+ flex: 1;
+}
+
 .contact_btn {
   margin: 1rem;
-  padding: 0.1rem 1rem 0.1rem 1rem;
+  padding: 0.3rem 1rem 0.3rem 1rem;
   border: none;
   font-family: $paragraph_font;
-  color:#fffffe;
-  background-color:#21b88e;
-
-}
-
-.container {
-  background-color: $primary;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-  height: 100vh;
-}
-
-.hero-text {
   color: $headline;
-  h1 {
-    color: $secondary;
-  }
+  background-color: $highlight;
+  font-weight: bold;
 }
 
 #img-face {
-  float: left;
+  width: auto;
+  height: 80vh;
   img {
     width: 40vw;
+    height:auto; 
     
   }
+}
+
+
+.hero {
+  background-color: $primary;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  height: 110vh;
+  
+}
+
+.hero-text {
+  padding-top: 20vh;
+  flex: 1;
+  color: $headline;
+  h1 {
+    color: $secondary;
+    margin: 0rem;
+  }
+  h2 {
+    margin: 0.5rem;
+  }
+}
+
+
+#portfolio-btn {
+  @extend .contact_btn;
+  background-color: $button;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+#qualifications {
+  display: flex;
+  flex-direction: column;
+  img {
+    flex: 1;
+    position: relative;
+    top: -28rem;
+  }
+}
+
+.qualifications-text {
+  flex: 1;
 }
