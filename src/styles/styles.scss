@@ -1,146 +1,19 @@
+//the main partial should contain only the imports of the already mentioned files
 
-// Colors 
-$primary: #0f0e17;
-$headline: #fffffe;
-$paragraph: #a7a9be;
-$button: #ff8906;
-$highlight: #21b88e;
-$secondary: #f25f4c;
+@import './base';
 
-//Fonts 
-$paragraph_font: Josefin Sans;
-$headline_font: Abril Fatface;
+@import './components';
 
-//Font Sizes
-$h1: 3rem;
+@import './layout';
+
+
+
+
+
  
-body {
-  background: #fffffe;
-  width: 100vw;
-  font-family: $paragraph_font;
-  
-}
-
-a {
-  text-decoration: none;
-}
-
-h1 {
-  font-family: Abril Fatface;
-  font-size: $h1;
-}
-
-header {
-  width: 100vw;
-  background-color: $primary;
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  
-};
-
-ul {
-  display:flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 80vw;
-  
-  li {
-    padding-right: 2rem;
-    list-style: none;
-    
-    a {
-      color: $headline;
-    }
-  }
-}
-
-.hero-section {
-  display: flex;
-  
-}
-
-.img-holder {
- flex: 1;
-}
-
-.contact_btn {
-  margin: 1rem;
-  padding: 0.3rem 1rem 0.3rem 1rem;
-  border: none;
-  font-family: $paragraph_font;
-  color: $headline;
-  background-color: $highlight;
-  font-weight: bold;
-}
-
-#img-face {
-  width: auto;
-  height: 80vh;
-  img {
-    width: 35vw;
-    height:auto; 
-    padding: 1rem 0 0 2rem;
-    
-  }
-}
 
 
-.hero {
-  background-color: $primary;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-  height: 100vh;
-  
-}
-
-.hero-text {
-  padding-top: 20vh;
-  flex: 1.5;
-  color: $headline;
-  h1 {
-    color: $secondary;
-    margin: 0rem;
-  }
-  h2 {
-    margin: 0;
-    font-size: large;
-  }
-  .front-end-h2 {
-    text-transform: uppercase;
-    font-size:xx-large;
-  }
-  h3 {
-    color:$paragraph;
-    font-size: small;
-    text-transform: lowercase;
-  }
-}
 
 
-#portfolio-btn {
-  @extend .contact_btn;
-  background-color: $button;
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-  margin-left: 0;
-}
 
-#qualifications {
-  display: flex;
-  flex-direction: column;
-  img {
-    flex: 1;
-    position: relative;
-    top: -28rem;
-  }
-}
 
-.qualifications-section {
-  flex: 1;
-}
-
-.qualifications-text {
-  display:flex;
-}

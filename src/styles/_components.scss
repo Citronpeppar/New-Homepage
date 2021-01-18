@@ -1,0 +1,49 @@
+//everything that is reusable – buttons, navbars, cards, and so on
+
+header {
+  
+  width: 100vw;
+  background-color: $primary;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+};
+
+ul {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 80vw;
+  
+  li {
+    padding-right: 2rem;
+    list-style: none;
+    
+    a {
+      color: $headline;
+    }
+  }
+}
+
+.hero-section {
+  display: flex;
+  
+}
+
+.img-holder {
+ flex: 1;
+}
+
+.contact_btn {
+  margin: 1rem;
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  border: none;
+  font-family: $paragraph_font;
+  color: $headline;
+  background-color: $highlight;
+  font-weight: bold;
+}

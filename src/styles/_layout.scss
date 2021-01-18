@@ -1,0 +1,70 @@
+//all the Sass code handling the layout, which is the container and grid systems
+body {
+  background: #fffffe;
+  width: 100vw;
+  font-family: $paragraph_font;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Abril Fatface;
+  
+}
+
+
+.hero {
+  background-color: $primary;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  height: 100vh;
+  
+}
+
+.hero-text {
+  padding-top: 20vh;
+  flex: 1.5;
+  color: $headline;
+  h1 {
+    color: $secondary;
+    margin: 0rem;
+  }
+  h2 {
+    margin: 0;
+  }
+  .front-end-h2 {
+    text-transform: uppercase;
+  }
+  h3 {
+    color:$paragraph;
+    text-transform: lowercase;
+  }
+}
+
+
+#portfolio-btn {
+  @extend .contact_btn;
+  background-color: $button;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  margin-left: 0;
+}
+
+#qualifications {
+  display: flex;
+  flex-direction: column;
+  img {
+    flex: 1;
+    position: relative;
+    top: -45rem;
+  }
+}
+
+.qualifications-section {
+  flex: 1;
+}
+
+.qualifications-text {
+  display:flex;
+}
