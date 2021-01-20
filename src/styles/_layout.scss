@@ -11,14 +11,14 @@ body {
   grid-template-areas:
     "header header header"
     "hero hero hero"
-    ". quali ."
-    ". quali ."
-    ". quali ."
-    ". port ."
-    ". port ."
-    ". port ."
-    ". about ."
-    ". contact ."
+    "quali quali quali"
+    "quali quali quali"
+    "quali quali quali"
+    "port port port"
+    "port port port"
+    "port port port"
+    "about about about"
+    "contact contact contact"
     "footer footer footer"
 }
 
@@ -43,13 +43,13 @@ body {
     grid-template-columns: minmax(1.5em, 1fr) minmax(650px, 960px) 450px minmax(1.5em, 1fr);
     grid-template-areas:
       "header header header header"
-      ". hero hero hero ."
-      ". quali quali quali ."
-      ". port port port ."
-      ". port port port ."
-      ". port port port ."
-      ". about about about ."
-      ". contact contact ."
+      "hero hero hero hero "
+      "quali quali quali quali"
+      "port port port port"
+      "port port port port"
+      "port port port port"
+      "about about about about"
+      "contact contact contact"
       "footer footer footer footer"
   }
 }
@@ -105,10 +105,9 @@ nav {
 };
 
 .hero {
-  margin-top: 4rem;
-  margin-left: 1rem;
+  padding-left: 3rem;
   padding-top: 4rem;
-  background-image: url("../../public/img/Group\ 51@3x.png");
+  background-image: url("../../public/img/face\ op@3x.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-color: $primary;
@@ -137,8 +136,8 @@ nav {
 } */
 
 .hero-text {
-  padding-top: 20vh;
-  flex: 1.5;
+  padding-top: 10vh;
+
   color: $headline;
   h1 {
     color: $secondary;
@@ -162,12 +161,16 @@ nav {
   background-color: $button;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   margin-left: 0;
+  margin-top: 0;
 }
 
 .qualifications-text {
   display:flex;
+  flex-direction: column;
+  
 }
 
 .qualifications-section {
-  grid-row: 2;
+  display: flex;
+  flex-direction: column;
 }
