@@ -1,10 +1,66 @@
 //all the Sass code handling the layout, which is the container and grid systems
+
+
 body {
   background: #fffffe;
   width: 100vw;
   font-family: $paragraph_font;
-  
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "hero hero hero"
+    ". quali ."
+    ". quali ."
+    ". quali ."
+    ". port ."
+    ". port ."
+    ". port ."
+    ". about ."
+    ". contact ."
+    "footer footer footer"
 }
+
+@media only screen and (min-width: 860px) {
+  body {
+    grid-template-columns: 1.5em minmax(400px, 650px) minmax(200px, 350px) 1.5em;
+    grid-template-areas:
+      "header header header header"
+      ". hero hero hero ."
+      ". quali quali quali ."
+      ". port port ."
+      ". port port ."
+      ". port port."
+      ". about about ."
+      ". contact contact ."
+      "footer footer footer footer"
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  body {
+    grid-template-columns: minmax(1.5em, 1fr) minmax(650px, 960px) 450px minmax(1.5em, 1fr);
+    grid-template-areas:
+      "header header header header"
+      ". hero hero hero ."
+      ". quali quali quali ."
+      ". port port port ."
+      ". port port port ."
+      ". port port port ."
+      ". about about about ."
+      ". contact contact ."
+      "footer footer footer footer"
+  }
+}
+  
+header { grid-column: header / header; } 
+.hero { grid-area: hero; }
+.qualifications { grid-area: quali; }
+.portfolio { grid-area: port; }
+.about { grid-area: about; }
+.contact { grid-area: contact; }
+footer { grid-area: footer; }
 
 a {
   text-decoration: none;
@@ -15,13 +71,70 @@ h1 {
   
 }
 
+header {
+  
+  width: 100vw;
+  background-color: $primary;
+  position: fixed;
+  display:flex;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  ul {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 80vw;
+    list-style: none;
+    
+
+    li {
+      padding-right: 2rem;
+      
+      
+      a {
+        color: $headline;
+      }
+    }
+  }
+};
 
 .hero {
+  margin-top: 4rem;
+  margin-left: 1rem;
+  padding-top: 4rem;
+  background-image: url("../../public/img/Group\ 51@3x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   background-color: $primary;
+  
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   
-}
+} 
+
+/*.hero-section {
+  display: flex;
+  flex-direction: row;
+  
+}*/
+
+/*#img-face {
+  img {
+    flex: 1;
+    height: 100vh;
+    width: auto;
+    grid-column: 1/ 2;
+    
+  }
+} */
 
 .hero-text {
   padding-top: 20vh;
@@ -51,20 +164,10 @@ h1 {
   margin-left: 0;
 }
 
-#qualifications {
-  display: flex;
-  flex-direction: column;
-  img {
-    flex: 1;
-    position: relative;
-    top: -45rem;
-  }
+.qualifications-text {
+  display:flex;
 }
 
 .qualifications-section {
-  flex: 1;
-}
-
-.qualifications-text {
-  display:flex;
+  grid-row: 2;
 }

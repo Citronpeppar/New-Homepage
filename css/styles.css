@@ -112,6 +112,10 @@ small, .text_small {
 header {
   width: 100vw;
   background-color: #0f0e17;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 nav {
@@ -124,9 +128,12 @@ nav {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-ul {
+nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,27 +145,20 @@ ul {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 80vw;
-}
-
-ul li {
-  padding-right: 2rem;
   list-style: none;
 }
 
-ul li a {
+nav ul li {
+  padding-right: 2rem;
+}
+
+nav ul li a {
   color: #fffffe;
 }
 
-.hero-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .img-holder {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
 }
 
 .contact_btn, #portfolio-btn {
@@ -168,13 +168,77 @@ ul li a {
   font-family: Josefin Sans;
   color: #fffffe;
   background-color: #21b88e;
-  font-weight: bold;
 }
 
 body {
   background: #fffffe;
   width: 100vw;
   font-family: Josefin Sans;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "header header header" "hero hero hero" ". quali ." ". quali ." ". quali ." ". port ." ". port ." ". port ." ". about ." ". contact ." "footer footer footer";
+}
+
+@media only screen and (min-width: 860px) {
+  body {
+    -ms-grid-columns: 1.5em minmax(400px, 650px) minmax(200px, 350px) 1.5em;
+        grid-template-columns: 1.5em minmax(400px, 650px) minmax(200px, 350px) 1.5em;
+        grid-template-areas: "header header header header" ". hero hero hero ." ". quali quali quali ." ". port port ." ". port port ." ". port port." ". about about ." ". contact contact ." "footer footer footer footer";
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  body {
+    -ms-grid-columns: minmax(1.5em, 1fr) minmax(650px, 960px) 450px minmax(1.5em, 1fr);
+        grid-template-columns: minmax(1.5em, 1fr) minmax(650px, 960px) 450px minmax(1.5em, 1fr);
+        grid-template-areas: "header header header header" ". hero hero hero ." ". quali quali quali ." ". port port port ." ". port port port ." ". port port port ." ". about about about ." ". contact contact ." "footer footer footer footer";
+  }
+}
+
+header {
+  grid-column: header / header;
+}
+
+.hero {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: hero;
+}
+
+.qualifications {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: quali;
+}
+
+.portfolio {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: port;
+}
+
+.about {
+  -ms-grid-row: 9;
+  -ms-grid-column: 2;
+  grid-area: about;
+}
+
+.contact {
+  -ms-grid-row: 10;
+  -ms-grid-column: 2;
+  grid-area: contact;
+}
+
+footer {
+  -ms-grid-row: 11;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
 }
 
 a {
@@ -185,13 +249,88 @@ h1 {
   font-family: Abril Fatface;
 }
 
+header {
+  width: 100vw;
+  background-color: #0f0e17;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 80vw;
+  list-style: none;
+}
+
+nav ul li {
+  padding-right: 2rem;
+}
+
+nav ul li a {
+  color: #fffffe;
+}
+
 .hero {
+  margin-top: 4rem;
+  margin-left: 1rem;
+  padding-top: 4rem;
+  background-image: url("../../public/img/Group 51@3x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   background-color: #0f0e17;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
+/*.hero-section {
+  display: flex;
+  flex-direction: row;
+  
+}*/
+/*#img-face {
+  img {
+    flex: 1;
+    height: 100vh;
+    width: auto;
+    grid-column: 1/ 2;
+    
+  }
+} */
 .hero-text {
   padding-top: 20vh;
   -webkit-box-flex: 1.5;
@@ -224,33 +363,14 @@ h1 {
   margin-left: 0;
 }
 
-#qualifications {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#qualifications img {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  position: relative;
-  top: -45rem;
-}
-
-.qualifications-section {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
 .qualifications-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.qualifications-section {
+  -ms-grid-row: 2;
+  grid-row: 2;
 }
 /*# sourceMappingURL=styles.css.map */

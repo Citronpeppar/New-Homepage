@@ -4,38 +4,43 @@ header {
   
   width: 100vw;
   background-color: $primary;
+  position: fixed;
+  display:flex;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  
-};
-
-ul {
-  display:flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 80vw;
-  
-  li {
-    padding-right: 2rem;
+  flex-grow: 1;
+  ul {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 80vw;
     list-style: none;
     
-    a {
-      color: $headline;
+
+    li {
+      padding-right: 2rem;
+      
+      
+      a {
+        color: $headline;
+      }
     }
   }
-}
+};
+
+
 
 .hero-section {
-  display: flex;
+  
   
 }
 
 .img-holder {
- flex: 1;
+ grid-column: 2;
 }
 
 .contact_btn {
@@ -45,5 +50,5 @@ ul {
   font-family: $paragraph_font;
   color: $headline;
   background-color: $highlight;
-  font-weight: bold;
+  
 }
