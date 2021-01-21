@@ -103,7 +103,17 @@ nav {
         color: $headline;
         &:hover {
           color: $highlight;
-      }
+          border-bottom: 2px solid $highlight;
+          padding-bottom: 1rem;
+          transition: 200ms
+        }
+
+        &:active {
+          color: $highlight;
+          border-bottom: 2px solid $highlight;
+          padding-bottom: 1rem;
+          transition: 200ms
+        }
       }
     }
   }
@@ -121,6 +131,7 @@ nav {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
   
 } 
 
@@ -131,8 +142,9 @@ nav {
   h1 {
     color: $secondary;
     margin: 0rem;
+    line-height: 1;
   }
-  h2 {
+  h3, h4 {
     margin: 0;
   }
   .front-end-h2 {
@@ -170,6 +182,9 @@ nav {
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   margin-left: 0;
   margin-top: 0;
+  p {
+    size: 2rem;
+  }
 }
 
 .qualifications-text {

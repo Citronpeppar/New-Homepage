@@ -309,6 +309,11 @@ form {
   font-family: Josefin Sans;
   color: #fffffe;
   background-color: #21b88e;
+  font-size: 3rem;
+}
+
+.heading-img {
+  position: absolute;
 }
 
 body {
@@ -448,6 +453,18 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #21b88e;
+  border-bottom: 2px solid #21b88e;
+  padding-bottom: 1rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+nav ul li a:active {
+  color: #21b88e;
+  border-bottom: 2px solid #21b88e;
+  padding-bottom: 1rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
 .hero {
@@ -467,6 +484,7 @@ nav ul li a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 3rem;
 }
 
 .hero-text {
@@ -478,9 +496,10 @@ nav ul li a:hover {
 .hero-text h1 {
   color: #f25f4c;
   margin: 0rem;
+  line-height: 1;
 }
 
-.hero-text h2 {
+.hero-text h3, .hero-text h4 {
   margin: 0;
 }
 
@@ -513,6 +532,10 @@ nav ul li a:hover {
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   margin-left: 0;
   margin-top: 0;
+}
+
+#portfolio-btn p {
+  size: 2rem;
 }
 
 .qualifications-text {

@@ -82,6 +82,12 @@ form {
 }
 
 .contact-btn {
-  @include btn
+  @include btn;
+  font-size: 3rem;
+}
+
+.heading-img {
+  position: absolute;
   
+
 }
